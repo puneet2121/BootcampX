@@ -10,6 +10,13 @@ CREATE TABLE students (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255),
   phone VARCHAR(32),
-  github VARCHAR(255), start_date DATE, end_date DATE, cohort_id INTEGER REFERENCES cohort(id) ON DELETE CASCADE);
+  github VARCHAR(255), start_date DATE, 
+  end_date DATE,
+  cohort_id INTEGER REFERENCES cohort(id) ON DELETE CASCADE);
 
 
+
+
+
+SELECT students.name as student_name, email, cohort.name as cohort_name
+FROM students FULL OUTER JOIN cohort ON cohort.id = cohort_id;
