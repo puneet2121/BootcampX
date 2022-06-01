@@ -17,6 +17,13 @@ CREATE TABLE students (
 
 
 
+SELECT students.name as student_name, email, cohort.name as cohort_name
+FROM students RIGHT OUTER JOIN cohort ON cohort.id = cohort_id;
+
+
 
 SELECT students.name as student_name, email, cohort.name as cohort_name
 FROM students FULL OUTER JOIN cohort ON cohort.id = cohort_id;
+
+SELECT students.name as student_name, email, cohort.name as cohort_name
+FROM students INNER JOIN cohort ON cohort.id = cohort_id;
